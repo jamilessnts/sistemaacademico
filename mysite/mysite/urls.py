@@ -19,5 +19,8 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'', include('sistemaacademico.urls')),
+    url(r'^professor/', include('sistemaacademico.urls')), #irá p/ página do professor
+    url(r'^aluno/', include('sistemaacademico.urls')), #irá p/ página do aluno
+
 ]
 

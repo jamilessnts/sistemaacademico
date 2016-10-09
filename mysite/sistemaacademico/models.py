@@ -26,9 +26,9 @@ class Turma(models.Model):
         return self.nome
 
 class Avaliacoes(models.Model):
-    nota1 = models.DecimalField(max_digits=3, decimal_places=2)
-    nota2 = models.DecimalField(max_digits=3, decimal_places=2)
-    nota3 = models.DecimalField(max_digits=3, decimal_places=2)
+    nota1 = models.DecimalField(max_digits=4, decimal_places=2)
+    nota2 = models.DecimalField(max_digits=4, decimal_places=2)
+    nota3 = models.DecimalField(max_digits=4, decimal_places=2)
     disciplina = models.ForeignKey('Disciplina')
     aluno = models.ForeignKey('auth.User')
 
