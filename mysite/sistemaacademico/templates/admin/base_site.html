@@ -1,0 +1,27 @@
+{% extends "admin/base.html" %}
+
+{% block title %}{{ title }} | Sistema Acadêmico{% endblock %}
+
+{% block extrastyle %}
+    <style>
+        #header {
+            background-color: black;
+            color: white;
+
+        }
+
+        .module h2, .module caption, .inline-group h2 {
+            background: #000000;
+        }
+
+        #content{
+
+        }
+    </style>
+{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">Sistema Acadêmico</a></h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

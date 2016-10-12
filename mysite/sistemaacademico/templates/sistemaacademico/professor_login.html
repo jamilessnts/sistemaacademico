@@ -30,16 +30,16 @@
                 <ul class="nav navbar-nav">
 
                     <li class="">
-                        <a href="/sobre">
+                        <a href="#"> <!-- adicionar essa url em url -->
                             <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>&nbsp; Sobre
                         </a>
                     </li>
+
                     <li class="">
-                        <a href="/admin">
-                            <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>&nbsp; Login Admin
+                        <a href="">
+                            <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>&nbsp; Logout
                         </a>
                     </li>
-
 
                 </ul>
             </div>
@@ -49,12 +49,26 @@
     </nav>
 
 </head>
-    <div>
-         <h2 align="center">Sistema Acadêmico P.WEB 2016</h2>
-    </div>
-        <div align="center">
-            <a align="center" href="/aluno" class="btn btn-lg btn-primary">Portal do Aluno <span class="glyphicon glyphicon-education"></span></a>&nbsp<br><br>
-            <a href="/professor" class="btn btn-lg btn-primary">Portal do Professor <span class="glyphicon glyphicon-user"></span></a>&nbsp<br><br>
+<h2></h2>
+
+    <div class="container">
+    <div class="row">
+        <div class="col-md-offset-5 col-md-3">
+            <div class="form-login">
+            <h4>Bem vindo </h4>
+            <input type="text" id="userName" class="form-control input-sm chat-input" placeholder="Usuário" />
+            </br>
+            <input type="text" id="userPassword" class="form-control input-sm chat-input" placeholder="Senha" />
+            </br>
+            <div class="wrapper">
+            <span class="group-btn">
+                <a href="/professor/inicial" class="btn btn-primary btn-md">login <i class="fa fa-sign-in"></i></a>
+            </span>
+            </div>
+            </div>
+
         </div>
+        </div>
+    </div>
 </body>
 </html>

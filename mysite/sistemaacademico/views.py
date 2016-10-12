@@ -1,49 +1,78 @@
-from django.http import HttpResponse #no futuro nao iremos precisar desse import pq estou usando render
+from .models import Avaliacoes, Disciplina, Curso, Turma
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
-from django.http import Http404 #mostrar erros
+from django.shortcuts import render, redirect
+from django.views.generic import View
+from django.contrib.auth.views import login
+from django.contrib.auth.views import logout
+from django.contrib.auth import authenticate
+from django.shortcuts import render
 
 
-#no arquivo Html quando for colocar codigo python é feito com {% ....%}
-# se for variaveis eu utilizo {{nome da variavel}}
-
-from .models import Curso
-from .models import Avaliacoes
-#
-#Dica para verificar o que tem nas tabelas pelo queryShell
-# python manage.py shell -> from sistemaacademico.models import 'nomedaTabela'
-#select * = Curso.objects.all()
-
+from django.views import generic
 
 # home page
 def index(request):
-    return render(request, 'sistemaacademico/site_homepage.html', {'notas':Avaliacoes})
+    return render(request, 'sistemaacademico/site_homepage.html')
 
-# pagina do professor
 
+# pagina inicial de login do professor
 def professor(request):
-    cursos = Curso.objects.all()
-    context = {'notas':Avaliacoes} # fazer um dicionario para simplificar o codigo
-    return render(request, 'sistemaacademico/professor_pagina_inicial.html', context)
+    return render(request, 'sistemaacademico/professor_login.html')
 
 
+# pagina inicial do professor
+def inicialprofessor(request):
+    return render(request, 'sistemaacademico/professor_inicial.html')
+
+
+# pagina login do aluno
 def aluno(request):
+    return render(request, 'sistemaacademico/aluno_login.html')
+
+def sobre(request):
+    return render(request, 'sistemaacademico/sobre.html')
+
+
+# pagina inicial do aluno
+def inicialaluno(request):
     cursos = Curso.objects.all()
-    return render(request, 'sistemaacademico/aluno_pagina_inicial.html', {'cursos':cursos})
+    context = {'notas':Avaliacoes}
+    return render(request, 'sistemaacademico/aluno_inicial.html', context)
 
-# fazer um for no arquivo hmtl
-# e mostrar o detalhe de cada estudante por exemplo - mostra os estudantes e fica em formato de link
-#e ao clicar em cada estudante é possivel ver detalhes sobre ele
+def get_user(request):
+    current_user = request.get.user
+    return current_user
 
-#{% if all_albuns %}
-#     <ul>
-#        {% for album in all_albums %}
-#           <li><a> href="/music/{{album_id}}/">{{album.album_title}}</a></li>
-#      </ul>
-#       {% endfor %}
-#
-#
 
-# observacao 2, a importacao getObject or 404 é para quando o usuario requisitar uma pagina que nao existe retornar erro
-#de page not found
+class NotaTodosAlunos(generic.ListView):
+    template_name = 'sistemaacademico/notas_todos_alunos.html'
+    context_object_name = 'lista_notas'
 
-# exemplo de codigo: album = get_object_or_404(Album, pk=album_id)
+    def get_queryset(self):
+        return Avaliacoes.objects.all()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

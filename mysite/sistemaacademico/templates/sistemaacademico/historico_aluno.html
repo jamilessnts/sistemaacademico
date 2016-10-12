@@ -6,7 +6,7 @@
     <title>Sitema Academico P.Web 2016</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Satisfy&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="{% static 'sistemaacademico/style.css' %}"/>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -28,18 +28,36 @@
 
             <div class="collapse navbar-collapse" id="topNavBar">
                 <ul class="nav navbar-nav">
-
+                    <li class=""> <!--"active" -->
+                        <a href="/aluno">
+                            <span class="glyphicon glyphicon-education" aria-hidden="true"></span>&nbsp; Aluno
+                        </a>
+                    </li>
                     <li class="">
-                        <a href="/sobre">
+                        <a href="/professor">
+                            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp; Professor
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="/admin">
+                            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>&nbsp; Admin
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="/">
                             <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>&nbsp; Sobre
                         </a>
                     </li>
                     <li class="">
                         <a href="/admin">
-                            <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>&nbsp; Login Admin
+                            <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>&nbsp; Login
                         </a>
                     </li>
-
+                    <li class="">
+                        <a href="">
+                            <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>&nbsp; Logout
+                        </a>
+                    </li>
 
                 </ul>
             </div>
@@ -49,12 +67,19 @@
     </nav>
 
 </head>
+<h2>
     <div>
          <h2 align="center">Sistema Acadêmico P.WEB 2016</h2>
     </div>
-        <div align="center">
-            <a align="center" href="/aluno" class="btn btn-lg btn-primary">Portal do Aluno <span class="glyphicon glyphicon-education"></span></a>&nbsp<br><br>
-            <a href="/professor" class="btn btn-lg btn-primary">Portal do Professor <span class="glyphicon glyphicon-user"></span></a>&nbsp<br><br>
-        </div>
+
+    <div>
+
+    </div>
+
+
+
+    </div></h2>
+
+
 </body>
 </html>

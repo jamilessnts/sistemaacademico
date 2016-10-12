@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+
+    <meta charset="UTF-8">
+    <title>Portal do Professor</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Satisfy&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{% static 'sistemaacademico/style.css' %}"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <!-- Header -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
+                    <!-- Para ficar adaptavel a tela e mostrar barras de opcoes se a tela estiver menor-->
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Sistema Acadêmico</a>
+            </div>
+
+            <!-- Items-->
+
+            <div class="collapse navbar-collapse" id="topNavBar">
+                <ul class="nav navbar-nav">
+
+                    <li class="">
+                        <a href="/professor/inicial">
+                            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp; Professor
+                        </a>
+                    </li>
+
+                    <li class="">
+                        <a href="/professor/inicial/notas">
+                            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>&nbsp; Notas dos Alunos
+                        </a>
+                    </li>
+
+                    <li class="">
+                        <a href="#">
+                            <span class="glyphicon glyphicon-stats" aria-hidden="true"></span>&nbsp; Gráfico de Performance
+                        </a>
+                    </li>
+
+                    <li class="">
+                        <a href="#">
+                            <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>&nbsp; Exportar Notas .xls
+                        </a>
+                    </li>
+
+                    <li class="">
+                        <a href="#">
+                            <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>&nbsp; Exportar Notas .pdf
+                        </a>
+                    </li>
+
+                    <li class="">
+                        <a href="#"> <!-- adicionar essa url em url -->
+                            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>&nbsp; Sobre
+                        </a>
+                    </li>
+
+                    <li class="">
+                        <a href="">
+                            <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>&nbsp; Logout
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+
+    </nav>
+
+</head>
+<h2></h2>
+    <div>
+         <h3 align="center">Portal do professor</h3>
+        <h5>Neste portal é possível realizar o lançamento de notas<br>
+            Exportar planilha
+        </h5>
+
+    </div>
+</body>
+</html>
