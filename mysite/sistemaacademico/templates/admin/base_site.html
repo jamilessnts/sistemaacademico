@@ -3,25 +3,31 @@
 {% block title %}{{ title }} | Sistema Acadêmico{% endblock %}
 
 {% block extrastyle %}
+
     <style>
         #header {
             background-color: black;
             color: white;
-
         }
 
         .module h2, .module caption, .inline-group h2 {
             background: #000000;
         }
+   </style>
+<br><div align="center">
+       <h1> <a align="center" href="/" class="btn btn-sm btn-primary">Voltar para Página Inicial</a></h1>
+</div>
+<div align="center">
+       <h1> <a align="center" href="{{ request.META.HTTP_REFERER }}" class="btn btn-sm btn-primary">Voltar para Página Anterior</a></h1>
+</div>
 
-        #content{
-
-        }
-    </style>
 {% endblock %}
 
 {% block branding %}
 <h1 id="site-name"><a href="{% url 'admin:index' %}">Sistema Acadêmico</a></h1>
+
 {% endblock %}
 
+
 {% block nav-global %}{% endblock %}
+

@@ -54,12 +54,6 @@
                     </li>
 
                     <li class="">
-                        <a href="#">
-                            <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>&nbsp; Exportar Notas .pdf
-                        </a>
-                    </li>
-
-                    <li class="">
                         <a href="#"> <!-- adicionar essa url em url -->
                             <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>&nbsp; Sobre
                         </a>
@@ -80,12 +74,13 @@
 
 </head>
 <h2></h2>
-    <div>
-         <h3 align="center">Portal do professor</h3>
-        <h5>Neste portal é possível realizar o lançamento de notas<br>
-            Exportar planilha
-        </h5>
-
+    <div class="panel panel-info">
+      <div align="center" class="panel-heading"><h2>Bem Vindo(a) {% if request.user.is_authenticated %} {{ request.user.first_name }}
+    {% endif %} ao Portal do Professor</h2></div>
     </div>
+    <div align="center">
+        <a align="center" href="/admin" class="btn btn-lg btn-primary">Cadastrar Notas  <span class="glyphicon glyphicon-ok"></span></a>&nbsp<br><br>
+    </div>
+
 </body>
 </html>

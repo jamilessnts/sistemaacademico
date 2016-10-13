@@ -3,12 +3,12 @@
 <html lang="en">
 
     <meta charset="UTF-8">
-    <title>Portal do aluno</title>
+    <title>Portal do Aluno - Notas </title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <link href="https://fonts.googleapis.com/css?family=Satisfy&subset=latin,latin-ext" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="{% static 'sistemaacademico/style.css' %}"/>
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'django_tables2/themes/paleblue/css/screen.css' %}" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
@@ -29,46 +29,74 @@
 
             <div class="collapse navbar-collapse" id="topNavBar">
                 <ul class="nav navbar-nav">
-                    <li class=""> <!--"active" -->
-                        <a href="/aluno/inicial">
+
+                    <li class="">
+                        <a href="/professor/inicial">
                             <span class="glyphicon glyphicon-education" aria-hidden="true"></span>&nbsp; Aluno
                         </a>
                     </li>
 
-                    <li class=""> <!--"active" -->
-                        <a href="/aluno/inicial/notas">
+                    <li class="">
+                        <a href="#">
                             <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>&nbsp; Notas
                         </a>
                     </li>
 
-                    <li class=""> <!--"active" -->
+                    <li class="">
                         <a href="#">
                             <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>&nbsp; Histórico
                         </a>
                     </li>
 
                     <li class="">
-                        <a href="/sobre">
+                        <a href="#">
                             <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>&nbsp; Sobre
                         </a>
                     </li>
+
                     <li class="">
-                        <a href="/logout">
+                        <a href="#">
                             <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>&nbsp; Logout
                         </a>
                     </li>
 
                 </ul>
             </div>
+
         </div>
+
     </nav>
 
-    <div class="panel panel-primary">
-      <div align="center" class="panel-heading"><h2>Bem Vindo(a) {% if request.user.is_authenticated %} {{ request.user.first_name }}
-    {% endif %} ao Portal do Aluno</h2></div>
-    </div>
-        <div align="center">
+</head>
+    <body>
+<h2></h2>
 
-        </div>
-</body>
+    <div class="container">
+        <h2>Minhas Notas</h2>
+
+            <table class="table">
+        <thead>
+            <tr>
+
+                <th>Disciplina</th>
+                <th>Nota 2</th>
+                <th>Nota 1</th>
+                <th>Nota 3</th>
+            </tr>
+        </thead>
+
+        {% for nota in lista_nota %}
+        <tr>
+
+            <th> {{ nota.disciplina }}</th>
+            <th> {{ nota.nota1 }}</th>
+            <th> {{ nota.nota2 }}</th>
+            <th> {{ nota.nota3 }}</th>
+        </tr>
+        {% endfor %}
+
+  </table>
+</div>
+
+    </body>
 </html>

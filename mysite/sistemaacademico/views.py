@@ -6,6 +6,8 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.template import RequestContext
 from django.contrib.auth.models import User
+from django.contrib import messages
+
 
 
 from django.views import generic
@@ -41,10 +43,6 @@ def inicialaluno(request):
     context = {'notas':Avaliacoes}
     return render(request, 'sistemaacademico/aluno_inicial.html', context)
 
-def get_user(request):
-    current_user = request.get.user
-    return current_user
-
 
 class NotaTodosAlunos(generic.ListView):
     template_name = 'sistemaacademico/notas_todos_alunos.html'
@@ -53,7 +51,7 @@ class NotaTodosAlunos(generic.ListView):
     def get_queryset(self):
         return Avaliacoes.objects.all()
 
-
+# Funções para Login e logout
 def login_user(request):
 
     username = password = ''
@@ -67,6 +65,8 @@ def login_user(request):
                 login(request, user)
                 if user.groups.filter(name='professor'):
                     return HttpResponseRedirect('/professor/inicial')
+                elif user.is_superuser:
+                    return HttpResponseRedirect('/admin')
                 else:
                     return HttpResponseRedirect('/aluno/inicial')
     return render(request, 'sistemaacademico/login.html')
@@ -77,11 +77,11 @@ def logout_view(request):
     return render (request, 'sistemaacademico/site_homepage.html')
 
 
-
-
-
-
-
+def notaAlunoLogago(request):
+    current_user = request.user
+    lista_nota = Avaliacoes.objects.filter(aluno=request.user)
+    context = {'lista_nota':lista_nota}
+    return render(request, 'sistemaacademico/nota_aluno_logado.html', context)
 
 
 
