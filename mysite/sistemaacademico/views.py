@@ -1,12 +1,11 @@
 from .models import Avaliacoes, Disciplina, Curso, Turma
-from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render, get_object_or_404
-from django.shortcuts import render, redirect
+from django.http import *
+from django.shortcuts import render_to_response, render, redirect
 from django.views.generic import View
-from django.contrib.auth.views import login
-from django.contrib.auth.views import logout
-from django.contrib.auth import authenticate
-from django.shortcuts import render
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
+from django.template import RequestContext
+from django.contrib.auth.models import User
 
 
 from django.views import generic
@@ -33,6 +32,8 @@ def aluno(request):
 def sobre(request):
     return render(request, 'sistemaacademico/sobre.html')
 
+def errorlogin(request):
+    return render(request, 'sistemaacademico/error.html')
 
 # pagina inicial do aluno
 def inicialaluno(request):
@@ -53,8 +54,27 @@ class NotaTodosAlunos(generic.ListView):
         return Avaliacoes.objects.all()
 
 
+def login_user(request):
+
+    username = password = ''
+    if request.POST:
+        username = request.POST['username']
+        password = request.POST['password']
+
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            if user.is_active:
+                login(request, user)
+                if user.groups.filter(name='professor'):
+                    return HttpResponseRedirect('/professor/inicial')
+                else:
+                    return HttpResponseRedirect('/aluno/inicial')
+    return render(request, 'sistemaacademico/login.html')
 
 
+def logout_view(request):
+    logout(request)
+    return render (request, 'sistemaacademico/site_homepage.html')
 
 
 

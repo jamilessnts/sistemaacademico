@@ -1,7 +1,78 @@
-<h1> Login</h1>
-<form role="form" class="form" method="post" action="{{ request.path }}{% if next %}?next={{ next }}{% endif %}">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="btn btn-warning"><i class="fa fa-plus" aria-hidden="true"></i> Login</button>
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
 
-</form>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Satisfy&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{% static 'sistemaacademico/style.css' %}"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <!-- Header -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
+                    <!-- Para ficar adaptavel a tela e mostrar barras de opcoes se a tela estiver menor-->
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Sistema Acadêmico</a>
+            </div>
+
+            <!-- Items-->
+
+            <div class="collapse navbar-collapse" id="topNavBar">
+                <ul class="nav navbar-nav">
+
+                    <li class="">
+                        <a href="/sobre">
+                            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>&nbsp; Sobre
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="/admin">
+                            <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>&nbsp; Login Admin
+                        </a>
+                    </li>
+
+
+                </ul>
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <div align="center" id="login">
+        <form class="form-horizontal" name="LoginForm" action="/login/" method="post">
+        {% csrf_token %}
+        {% if next %}
+            <input type="hidden" name="next" value="{{ next }}" />
+        {% endif %}
+        <div class="control-group">
+            <label class="control-label" for="username">Username</label>
+            <div class="controls">
+                <input type="text" id="username" name="username"  placeholder="Usuário">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="password">Password</label>
+            <div class="controls">
+                <input type="password" name="password" id="password" placeholder="Senha">
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <button type="submit" class="btn">Login</button>
+            </div>
+        </div>
+        </form>
+    </div>
+
+</html>

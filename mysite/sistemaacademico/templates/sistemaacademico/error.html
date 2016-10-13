@@ -30,16 +30,22 @@
                 <ul class="nav navbar-nav">
 
                     <li class="">
-                        <a href="#"> <!-- adicionar essa url em url -->
+                        <a href="/sobre">
                             <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>&nbsp; Sobre
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="/admin">
+                            <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>&nbsp; Login Admin
                         </a>
                     </li>
 
                     <li class="">
-                        <a href="">
-                            <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>&nbsp; Logout
+                        <a href="/login">
+                            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp; Login Usuario
                         </a>
                     </li>
+
 
                 </ul>
             </div>
@@ -48,27 +54,10 @@
 
     </nav>
 
-</head>
-<h2></h2>
-
-    <div class="container">
-    <div class="row">
-        <div class="col-md-offset-5 col-md-3">
-            <div class="form-login">
-            <h4>Bem vindo </h4>
-            <input type="text" id="userName" class="form-control input-sm chat-input" placeholder="Usuário" />
-            </br>
-            <input type="text" id="userPassword" class="form-control input-sm chat-input" placeholder="Senha" />
-            </br>
-            <div class="wrapper">
-            <span class="group-btn">
-                <a href="/professor/inicial" class="btn btn-primary btn-md">login <i class="fa fa-sign-in"></i></a>
-            </span>
-            </div>
-            </div>
-
-        </div>
-        </div>
+    <div align="center" class="alert alert-danger" role="alert">
+        <strong>Erro de autenticação!</strong> Verifique usuário e senha e tente novamente!!!
     </div>
+    <a href="/login" class="btn btn-md btn-primary">Voltar para Login <span ></span></a>&nbsp
+    <a href="/" class="btn btn-md btn-primary">Voltar para Página Inical <span ></span></a>&nbsp<br><br>
 </body>
 </html>
