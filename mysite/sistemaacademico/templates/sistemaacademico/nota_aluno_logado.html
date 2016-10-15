@@ -31,31 +31,31 @@
                 <ul class="nav navbar-nav">
 
                     <li class="">
-                        <a href="/professor/inicial">
+                        <a href="/aluno/inicial">
                             <span class="glyphicon glyphicon-education" aria-hidden="true"></span>&nbsp; Aluno
                         </a>
                     </li>
 
                     <li class="">
-                        <a href="#">
+                        <a href="/aluno/inicial/notas">
                             <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>&nbsp; Notas
                         </a>
                     </li>
 
                     <li class="">
-                        <a href="#">
+                        <a href="/aluno/inicial/historico">
                             <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>&nbsp; Histórico
                         </a>
                     </li>
 
                     <li class="">
-                        <a href="#">
+                        <a href="/sobre">
                             <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>&nbsp; Sobre
                         </a>
                     </li>
 
                     <li class="">
-                        <a href="#">
+                        <a href="/logout">
                             <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>&nbsp; Logout
                         </a>
                     </li>
@@ -70,33 +70,42 @@
 </head>
     <body>
 <h2></h2>
+    {% if request.user.is_staff %}
+            <div align="center" class="alert alert-danger" role="alert">
+                <strong>Erro de autenticação!</strong> Você não tem perfil de acesso para o portal do Aluno!!!
+            </div>
+                <a href="/login" class="btn btn-md btn-primary">Voltar para Login <span ></span></a>&nbsp
+                <a href="/" class="btn btn-md btn-primary">Voltar para Página Inical <span ></span></a>&nbsp<br><br>
 
-    <div class="container">
+    {% else %}
+        <div class="container">
         <h2>Minhas Notas</h2>
 
             <table class="table">
-        <thead>
-            <tr>
+            <thead>
+                <tr>
 
-                <th>Disciplina</th>
-                <th>Nota 2</th>
-                <th>Nota 1</th>
-                <th>Nota 3</th>
-            </tr>
-        </thead>
+                    <th>Disciplina</th>
+                    <th>Nota 2</th>
+                    <th>Nota 1</th>
+                    <th>Nota 3</th>
+                </tr>
+            </thead>
 
-        {% for nota in lista_nota %}
-        <tr>
+                {% for nota in lista_nota %}
+                <tr>
 
-            <th> {{ nota.disciplina }}</th>
-            <th> {{ nota.nota1 }}</th>
-            <th> {{ nota.nota2 }}</th>
-            <th> {{ nota.nota3 }}</th>
-        </tr>
-        {% endfor %}
+                    <th> {{ nota.disciplina }}</th>
+                    <th> {{ nota.nota1 }}</th>
+                    <th> {{ nota.nota2 }}</th>
+                    <th> {{ nota.nota3 }}</th>
+                </tr>
+                {% endfor %}
 
-  </table>
-</div>
+            </table>
+        </div>
+
+    {% endif %}
 
     </body>
 </html>

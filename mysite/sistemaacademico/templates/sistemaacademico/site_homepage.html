@@ -56,11 +56,14 @@
     </nav>
 
 </head>
+    {% if request.user.is_authenticated %}Olá {{ request.user.first_name }}
+    {% endif %}
     <div class="panel panel-primary">
       <div align="center" class="panel-heading"><h2>Sistema Acadêmico 2016.1</h2></div>
     </div>
         <div align="center">
 
         </div>
+
 </body>
 </html>

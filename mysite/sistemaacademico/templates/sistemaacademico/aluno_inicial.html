@@ -42,7 +42,7 @@
                     </li>
 
                     <li class=""> <!--"active" -->
-                        <a href="#">
+                        <a href="/aluno/inicial/historico">
                             <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>&nbsp; Histórico
                         </a>
                     </li>
@@ -63,12 +63,18 @@
         </div>
     </nav>
 
-    <div class="panel panel-primary">
-      <div align="center" class="panel-heading"><h2>Bem Vindo(a) {% if request.user.is_authenticated %} {{ request.user.first_name }}
-    {% endif %} ao Portal do Aluno</h2></div>
-    </div>
-        <div align="center">
+    {% if request.user.is_staff %}
+            <div align="center" class="alert alert-danger" role="alert">
+                <strong>Erro de autenticação!</strong> Você não tem perfil de acesso para o portal do professor!!!
+            </div>
+            <a href="/login" class="btn btn-md btn-primary">Voltar para Login <span ></span></a>&nbsp
+            <a href="/" class="btn btn-md btn-primary">Voltar para Página Inical <span ></span></a>&nbsp<br><br>
+    {% else %}
+            <div class="panel panel-info">
+                <div align="center" class="panel-heading">
+                <h2>Bem Vindo(a) {{ request.user.first_name }} ao Portal do Aluno</h2></div>
+            </div>
 
-        </div>
+    {% endif %}
 </body>
 </html>

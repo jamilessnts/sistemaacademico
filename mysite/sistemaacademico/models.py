@@ -32,13 +32,13 @@ class Turma(models.Model):
 class Avaliacoes(models.Model):
     aluno = models.ForeignKey('auth.User', limit_choices_to={'groups':2})
     disciplina = models.ForeignKey('Disciplina')
-    #professor = models.ForeignKey('auth.User', limit_choices_to={'groups':1}) # para retornar o professor que lancou a nota
     nota1 = models.DecimalField(max_digits=4, decimal_places=2)
     nota2 = models.DecimalField(max_digits=4, decimal_places=2)
     nota3 = models.DecimalField(max_digits=4, decimal_places=2)
 
-    class Meta:
-        permissions = (
-            ('readonly', 'Can Read only Avaliacoes'),
-        )
+class Historico(models.Model):
+    aluno = models.ForeignKey('auth.User', limit_choices_to={'groups':2})
+    disciplina = models.ForeignKey('Disciplina')
+    media = models.DecimalField(max_digits=4, decimal_places=2)
+
 

@@ -1,4 +1,4 @@
-from .models import Avaliacoes, Disciplina, Curso, Turma
+from .models import Avaliacoes, Disciplina, Curso, Turma, Historico
 from django.http import *
 from django.shortcuts import render_to_response, render, redirect
 from django.views.generic import View
@@ -7,10 +7,15 @@ from django.contrib.auth.decorators import login_required
 from django.template import RequestContext
 from django.contrib.auth.models import User
 from django.contrib import messages
-
-
-
 from django.views import generic
+from django.db.models import Sum
+from django.shortcuts import render
+import csv
+from django.utils.encoding import smart_str
+from django.http import HttpResponse
+
+
+
 
 # home page
 def index(request):
@@ -51,6 +56,7 @@ class NotaTodosAlunos(generic.ListView):
     def get_queryset(self):
         return Avaliacoes.objects.all()
 
+
 # Funções para Login e logout
 def login_user(request):
 
@@ -82,6 +88,62 @@ def notaAlunoLogago(request):
     lista_nota = Avaliacoes.objects.filter(aluno=request.user)
     context = {'lista_nota':lista_nota}
     return render(request, 'sistemaacademico/nota_aluno_logado.html', context)
+
+
+def graficoteste(request):
+    total_n1 = Avaliacoes.objects.all().aggregate(Sum('nota1'))
+    total_n2 = Avaliacoes.objects.all().aggregate(Sum('nota2'))
+    context = {'total_n1': total_n1}
+    total_n3 = Avaliacoes.objects.all().aggregate(Sum('nota3'))
+    return render(request, 'sistemaacademico/grafico.html', {'total_n1': total_n1, 'total_n2': total_n2, 'total_n3': total_n3})
+
+def some_view(request):
+    # Create the HttpResponse object with the appropriate CSV header.
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = 'attachment; filename="somefilename.csv"'
+
+    writer = csv.writer(response)
+    writer.writerow(['First row', 'Foo', 'Bar', 'Baz'])
+    writer.writerow(['Second row', 'A', 'B', 'C', '"Testing"', "Here's a quote"])
+
+    return response
+
+def export_csv(request):
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = 'attachment; filename=notadosalunos.csv'
+    writer = csv.writer(response, csv.excel)
+    response.write(u'\ufeff'.encode('utf8')) # BOM (optional...Excel needs it to open UTF-8 file properly)
+    writer.writerow([
+        smart_str(u"ID"),
+        smart_str(u"Aluno"),
+        smart_str(u"Disciplina"),
+        smart_str(u"Nota1"),
+        smart_str(u"Nota2"),
+        smart_str(u"Nota3"),
+    ])
+    queryset = Avaliacoes.objects.all()
+
+    for obj in queryset:
+        writer.writerow([
+            smart_str(obj.pk),
+            smart_str(obj.aluno),
+            smart_str(obj.disciplina),
+            smart_str(obj.nota1),
+            smart_str(obj.nota2),
+            smart_str(obj.nota3),
+        ])
+    return response
+export_csv.short_description = u"Export CSV"
+
+
+def historicoAlunoLogado(request):
+    current_user = request.user
+    lista_nota = Historico.objects.filter(aluno=request.user)
+    context = {'lista_nota':lista_nota}
+    return render(request, 'sistemaacademico/historico_aluno.html', context)
+
+
+
 
 
 

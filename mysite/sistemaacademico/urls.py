@@ -13,7 +13,11 @@ urlpatterns = [
     url(r'^professor/inicial$', views.inicialprofessor, name='inicialp'),
     url(r'^aluno/inicial$', views.inicialaluno),
     url(r'^aluno/inicial/notas$', views.notaAlunoLogago, name='aluno_nota'),
+    url(r'^aluno/inicial/historico$', views.historicoAlunoLogado, name='aluno_historico'),
+    url(r'^professor/inicial/grafico$', views.graficoteste, name='grafico'),
     url(r'^professor/inicial/notas$', views.NotaTodosAlunos.as_view()),
+    url(r'^professor/inicial/pdf$', views.export_csv),
+
 
 
 ]

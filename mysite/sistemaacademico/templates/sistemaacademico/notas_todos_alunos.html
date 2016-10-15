@@ -43,20 +43,14 @@
                     </li>
 
                     <li class="">
-                        <a href="#">
+                        <a href="/professor/inicial/grafico">
                             <span class="glyphicon glyphicon-stats" aria-hidden="true"></span>&nbsp; Gráfico de Performance
                         </a>
                     </li>
 
                     <li class="">
-                        <a href="#">
-                            <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>&nbsp; Exportar Notas .xls
-                        </a>
-                    </li>
-
-                    <li class="">
-                        <a href="#">
-                            <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>&nbsp; Exportar Notas .pdf
+                        <a href="/professor/inicial/pdf">
+                            <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>&nbsp; Exportar Notas para Planilha
                         </a>
                     </li>
 
@@ -82,8 +76,8 @@
 </head>
     <body>
 <h2></h2>
-
-    <div class="container">
+    {% if request.user.is_staff %}
+        <div class="container">
         <h2>Notas dos Alunos</h2>
 
             <table class="table">
@@ -111,6 +105,13 @@
 
   </table>
 </div>
+    {% else %}
+            <div align="center" class="alert alert-danger" role="alert">
+                <strong>Erro de autenticação!</strong> Você não tem perfil de acesso para o portal do professor!!!
+            </div>
+            <a href="/login" class="btn btn-md btn-primary">Voltar para Login <span ></span></a>&nbsp
+            <a href="/" class="btn btn-md btn-primary">Voltar para Página Inical <span ></span></a>&nbsp<br><br>
+    {% endif %}
 
     </body>
 </html>

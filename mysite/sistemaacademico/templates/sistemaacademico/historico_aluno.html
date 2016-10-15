@@ -29,32 +29,31 @@
             <div class="collapse navbar-collapse" id="topNavBar">
                 <ul class="nav navbar-nav">
                     <li class=""> <!--"active" -->
-                        <a href="/aluno">
+                        <a href="/aluno/inicial">
                             <span class="glyphicon glyphicon-education" aria-hidden="true"></span>&nbsp; Aluno
                         </a>
                     </li>
-                    <li class="">
-                        <a href="/professor">
-                            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp; Professor
+
+                    <li class=""> <!--"active" -->
+                        <a href="/aluno/inicial/notas">
+                            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>&nbsp; Notas
                         </a>
                     </li>
-                    <li class="">
-                        <a href="/admin">
-                            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>&nbsp; Admin
+
+                    <li class=""> <!--"active" -->
+                        <a href="/aluno/inicial/historico">
+                            <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>&nbsp; Histórico
                         </a>
                     </li>
+
                     <li class="">
-                        <a href="/">
+                        <a href="/sobre">
                             <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>&nbsp; Sobre
                         </a>
                     </li>
+
                     <li class="">
-                        <a href="/admin">
-                            <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>&nbsp; Login
-                        </a>
-                    </li>
-                    <li class="">
-                        <a href="">
+                        <a href="/logout">
                             <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>&nbsp; Logout
                         </a>
                     </li>
@@ -67,19 +66,36 @@
     </nav>
 
 </head>
-<h2>
-    <div>
-         <h2 align="center">Sistema Acadêmico P.WEB 2016</h2>
-    </div>
+<h2></h2>
 
-    <div>
+    {% if request.user.is_staff %}
+            <div align="center" class="alert alert-danger" role="alert">
+                <strong>Erro de autenticação!</strong> Você não tem perfil de acesso para o portal do Aluno!!!
+            </div>
+                <a href="/login" class="btn btn-md btn-primary">Voltar para Login <span ></span></a>&nbsp
+                <a href="/" class="btn btn-md btn-primary">Voltar para Página Inical <span ></span></a>&nbsp<br><br>
 
-    </div>
+    {% else %}
+        <div class="container">
+        <h2>Meu Histórico</h2>
 
+            <table class="table">
+            <thead>
+                <tr>
+                    <th>Disciplina</th>
+                    <th>Média Final</th>
+                </tr>
+            </thead>
+                {% for nota in lista_nota %}
+                <tr>
+                    <th> {{ nota.disciplina }}</th>
+                    <th> {{ nota.media }}</th>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
 
-
-    </div></h2>
-
+    {% endif %}
 
 </body>
 </html>
