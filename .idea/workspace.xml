@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d4175ba-748b-4c28-b29d-c2e680731e9e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mysite/mysite/settings.py" afterPath="$PROJECT_DIR$/mysite/mysite/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mysite/sistemaacademico/templates/sistemaacademico/aluno_inicial.html" afterPath="$PROJECT_DIR$/mysite/sistemaacademico/templates/sistemaacademico/aluno_inicial.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mysite/sistemaacademico/templates/sistemaacademico/grafico.html" afterPath="$PROJECT_DIR$/mysite/sistemaacademico/templates/sistemaacademico/grafico.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mysite/sistemaacademico/templates/sistemaacademico/login.html" afterPath="$PROJECT_DIR$/mysite/sistemaacademico/templates/sistemaacademico/login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mysite/sistemaacademico/templates/sistemaacademico/notas_todos_alunos.html" afterPath="$PROJECT_DIR$/mysite/sistemaacademico/templates/sistemaacademico/notas_todos_alunos.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mysite/sistemaacademico/templates/sistemaacademico/professor_inicial.html" afterPath="$PROJECT_DIR$/mysite/sistemaacademico/templates/sistemaacademico/professor_inicial.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mysite/sistemaacademico/templates/sistemaacademico/site_homepage.html" afterPath="$PROJECT_DIR$/mysite/sistemaacademico/templates/sistemaacademico/site_homepage.html" />
     </list>
     <ignored path="trabalhopweb2016.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,12 +31,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/mysite/mysite/settings.py">
+      <file leaf-file-name="grafico.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mysite/sistemaacademico/templates/sistemaacademico/grafico.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="517">
-              <caret line="123" column="0" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="268">
+              <caret line="105" column="12" selection-start-line="105" selection-start-column="12" selection-end-line="105" selection-end-column="12" />
+              <folding>
+                <element signature="n#nav#0;n#head#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -80,24 +88,24 @@
         <option value="$PROJECT_DIR$/mysite/mysite/urls.py" />
         <option value="$PROJECT_DIR$/mysite/sistemaacademico/templates/sistemaacademico/error.html" />
         <option value="$PROJECT_DIR$/mysite/sistemaacademico/templates/sistemaacademico/aluno_logado.html" />
-        <option value="$PROJECT_DIR$/mysite/sistemaacademico/templates/sistemaacademico/login.html" />
         <option value="$PROJECT_DIR$/mysite/sistemaacademico/templates/admin/base_site.html" />
         <option value="$PROJECT_DIR$/mysite/sistemaacademico/charts.py" />
         <option value="$PROJECT_DIR$/mysite/sistemaacademico/templates/sistemaacademico/sobre.html" />
-        <option value="$PROJECT_DIR$/mysite/sistemaacademico/templates/sistemaacademico/site_homepage.html" />
         <option value="$PROJECT_DIR$/mysite/sistemaacademico/templates/sistemaacademico/pdf.html" />
-        <option value="$PROJECT_DIR$/mysite/sistemaacademico/templates/sistemaacademico/professor_inicial.html" />
-        <option value="$PROJECT_DIR$/mysite/sistemaacademico/templates/sistemaacademico/notas_todos_alunos.html" />
         <option value="$PROJECT_DIR$/mysite/sistemaacademico/reports.py" />
-        <option value="$PROJECT_DIR$/mysite/sistemaacademico/templates/sistemaacademico/grafico.html" />
         <option value="$PROJECT_DIR$/mysite/sistemaacademico/models.py" />
         <option value="$PROJECT_DIR$/mysite/sistemaacademico/admin.py" />
         <option value="$PROJECT_DIR$/mysite/sistemaacademico/views.py" />
         <option value="$PROJECT_DIR$/mysite/sistemaacademico/urls.py" />
-        <option value="$PROJECT_DIR$/mysite/sistemaacademico/templates/sistemaacademico/aluno_inicial.html" />
         <option value="$PROJECT_DIR$/mysite/sistemaacademico/templates/sistemaacademico/nota_aluno_logado.html" />
         <option value="$PROJECT_DIR$/mysite/sistemaacademico/templates/sistemaacademico/historico_aluno.html" />
         <option value="$PROJECT_DIR$/mysite/mysite/settings.py" />
+        <option value="$PROJECT_DIR$/mysite/sistemaacademico/templates/sistemaacademico/login.html" />
+        <option value="$PROJECT_DIR$/mysite/sistemaacademico/templates/sistemaacademico/notas_todos_alunos.html" />
+        <option value="$PROJECT_DIR$/mysite/sistemaacademico/templates/sistemaacademico/aluno_inicial.html" />
+        <option value="$PROJECT_DIR$/mysite/sistemaacademico/templates/sistemaacademico/site_homepage.html" />
+        <option value="$PROJECT_DIR$/mysite/sistemaacademico/templates/sistemaacademico/professor_inicial.html" />
+        <option value="$PROJECT_DIR$/mysite/sistemaacademico/templates/sistemaacademico/grafico.html" />
       </list>
     </option>
   </component>
@@ -164,6 +172,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="myvenv" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trabalhopweb2016" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trabalhopweb2016" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="mysite" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -204,7 +226,33 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sistemaacademico" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trabalhopweb2016" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trabalhopweb2016" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mysite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sistemaacademico" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -559,13 +607,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/mysite/sistemaacademico/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mysite/sistemaacademico/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -655,13 +696,6 @@
     <entry file="file://$PROJECT_DIR$/mysite/sistemaacademico/forms.py" />
     <entry file="file://$PROJECT_DIR$/mysite/sistemaacademico/templates/sistemaacademico/registrations.html" />
     <entry file="file://$PROJECT_DIR$/mysite/sistemaacademico/templates/sistemaacademico/professor_login.html" />
-    <entry file="file://$PROJECT_DIR$/mysite/sistemaacademico/templates/sistemaacademico/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="64" column="61" selection-start-line="64" selection-start-column="61" selection-end-line="64" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mysite/sistemaacademico/templates/registration/login.html" />
     <entry file="file://$PROJECT_DIR$/mysite/sistemaacademico/templates/admin/base_site.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -685,16 +719,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mysite/sistemaacademico/templates/sistemaacademico/site_homepage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="57" column="7" selection-start-line="57" selection-start-column="7" selection-end-line="57" selection-end-column="7" />
-          <folding>
-            <element signature="e#2177#2183#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mysite/sistemaacademico/templates/sistemaacademico/sobre.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="403">
@@ -707,22 +731,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mysite/sistemaacademico/templates/sistemaacademico/professor_inicial.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="51" column="123" selection-start-line="51" selection-start-column="123" selection-end-line="51" selection-end-column="136" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mysite/sistemaacademico/templates/sistemaacademico/notas_todos_alunos.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="54" column="25" selection-start-line="54" selection-start-column="25" selection-end-line="54" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -761,37 +769,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mysite/sistemaacademico/templates/sistemaacademico/grafico.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="613">
-          <caret line="50" column="18" selection-start-line="50" selection-start-column="14" selection-end-line="50" selection-end-column="18" />
-          <folding>
-            <element signature="n#nav#0;n#head#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mysite/sistemaacademico/templates/sistemaacademico/aluno_inicial.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="44" column="34" selection-start-line="44" selection-start-column="34" selection-end-line="44" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mysite/sistemaacademico/templates/sistemaacademico/historico_aluno.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1275">
           <caret line="85" column="26" selection-start-line="85" selection-start-column="26" selection-end-line="85" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mysite/sistemaacademico/templates/sistemaacademico/nota_aluno_logado.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="45" column="57" selection-start-line="45" selection-start-column="57" selection-end-line="45" selection-end-column="57" />
           <folding />
         </state>
       </provider>
@@ -819,6 +800,75 @@
         <state relative-caret-position="517">
           <caret line="123" column="0" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/sistemaacademico/templates/sistemaacademico/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/sistemaacademico/templates/sistemaacademico/notas_todos_alunos.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="63" column="40" selection-start-line="63" selection-start-column="40" selection-end-line="63" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/sistemaacademico/templates/sistemaacademico/nota_aluno_logado.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="45" column="57" selection-start-line="45" selection-start-column="57" selection-end-line="45" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/sistemaacademico/templates/sistemaacademico/aluno_inicial.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="67" column="107" selection-start-line="67" selection-start-column="107" selection-end-line="67" selection-end-column="107" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/sistemaacademico/templates/sistemaacademico/site_homepage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="71" column="82" selection-start-line="71" selection-start-column="82" selection-end-line="71" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.local/share/applications/jetbrains-pycharm.desktop">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/sistemaacademico/templates/sistemaacademico/professor_inicial.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="91" column="7" selection-start-line="91" selection-start-column="7" selection-end-line="91" selection-end-column="7" />
+          <folding>
+            <element signature="n#nav#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/sistemaacademico/templates/sistemaacademico/grafico.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="105" column="12" selection-start-line="105" selection-start-column="12" selection-end-line="105" selection-end-column="12" />
+          <folding>
+            <element signature="n#nav#0;n#head#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -13,50 +13,30 @@
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
 
-    var data;
-    var chart;
-    // Load the Visualization API and the piechart package.
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
       google.charts.load('current', {'packages':['corechart']});
-
-      // Set a callback to run when the Google Visualization API is loaded.
       google.charts.setOnLoadCallback(drawChart);
 
-      // Callback that creates and populates a data table,
-      // instantiates the pie chart, passes in the data and
-      // draws it.
-
-
-        function drawChart() {
-
-        // Create our data table.
-        data = new google.visualization.DataTable();
-        data.addColumn('string', 'Topping');
-        data.addColumn('number', 'Slices');
-        data.addRows([
-          ['Mushrooms', 5],
-          ['Onions', 1],
-          ['Olives', 1],
-          ['Zucchini', 1],
-          ['Pepperoni', 2]
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Nota', 'nota 1', 'nota 2', 'nota 3'],
+          ['1',  5,      3,   4],
+          ['4',  5,      4,   8],
+          ['7',  8,      8,   1],
+          ['10',  3,     9,   7 ]
         ]);
 
-        // Set chart options
-        var options = {'title':'Nota dos Alunos',
-                       'width':400,
-                       'height':300};
+        var options = {
+          title: 'Evolução das Notas',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
 
-        // Instantiate and draw our chart, passing in some options.
-        chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-        google.visualization.events.addListener(chart, 'select', selectHandler);
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
         chart.draw(data, options);
       }
-
-      function selectHandler() {
-        var selectedItem = chart.getSelection()[0];
-        var value = data.getValue(selectedItem.row, 0);
-        alert('The user selected ' + value);
-      }
-
     </script>
 
     <nav class="navbar navbar-inverse">
@@ -128,7 +108,7 @@
             {{total_n3.nota3__sum}}
 
             <!--Div that will hold the pie chart-->
-            <div align="center" id="chart_div" style="width:400; height:300"></div>
+            <div id="curve_chart" style="width: 900px; height: 500px"></div>
     {% else %}
             <div align="center" class="alert alert-danger" role="alert">
                 <strong>Erro de autenticação!</strong> Você não tem perfil de acesso para o portal do professor!!!

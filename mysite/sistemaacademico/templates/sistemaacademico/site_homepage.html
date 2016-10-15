@@ -57,6 +57,24 @@
 
 </head>
     {% if request.user.is_authenticated %}Olá {{ request.user.first_name }}
+        {% if request.user.is_staff %}
+            {% if request.user.is_superuser %}
+                <div>
+                    <a align="center" href="/admin" class="btn btn-md btn-info">Voltar para Portal <span class="glyphicon glyphicon-home"></span></a>&nbsp<br>
+                </div>
+            {% else %}
+                <div>
+                    <a align="center" href="/professor/inicial" class="btn btn-md btn-info">Voltar para Portal <span class="glyphicon glyphicon-home"></span></a>&nbsp
+                </div>
+            {% endif %}
+        {% else %}
+            <div>
+                <a align="center" href="/aluno/inicial" class="btn btn-md btn-info">Voltar para Portal <span class="glyphicon glyphicon-home"></span></a>&nbsp
+
+            </div>
+
+        {% endif %}
+
     {% endif %}
     <div class="panel panel-primary">
       <div align="center" class="panel-heading"><h2>Sistema Acadêmico 2016.1</h2></div>
