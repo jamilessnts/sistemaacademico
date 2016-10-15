@@ -38,9 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'highcharts',
-    'chartkick',
-
 
 ]
 
@@ -124,8 +121,3 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
-import chartkick
-STATICFILES_DIRS = (
-    chartkick.js(),
-)
