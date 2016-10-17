@@ -54,8 +54,14 @@ class NotaTodosAlunos(generic.ListView):
     context_object_name = 'lista_notas'
 
     def get_queryset(self):
-        return Avaliacoes.objects.all()
+        usuario = self.request.user
+        turmas = Turma.objects.filter(professor=usuario)
+        disciplinas = []
+        if turmas is not None:
+            for t in turmas:
+                disciplinas += Avaliacoes.objects.filter(disciplina=t.disciplina)
 
+        return disciplinas
 
 # Funções para Login e logout
 def login_user(request):
@@ -83,7 +89,7 @@ def logout_view(request):
     return render (request, 'sistemaacademico/site_homepage.html')
 
 
-def notaAlunoLogago(request):
+def notaAlunoLogado(request):
     current_user = request.user
     lista_nota = Avaliacoes.objects.filter(aluno=request.user)
     context = {'lista_nota':lista_nota}
@@ -111,7 +117,12 @@ def export_csv(request):
         smart_str(u"Nota2"),
         smart_str(u"Nota3"),
     ])
-    queryset = Avaliacoes.objects.all()
+    usuario = request.user
+    turmas = Turma.objects.filter(professor=usuario)
+    queryset = []
+    if turmas is not None:
+        for t in turmas:
+            queryset += Avaliacoes.objects.filter(disciplina=t.disciplina)
 
     for obj in queryset:
         writer.writerow([
