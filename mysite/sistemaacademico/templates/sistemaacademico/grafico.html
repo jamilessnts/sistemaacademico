@@ -12,12 +12,10 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
-
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
-
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
           ['Nota', 'nota 1', 'nota 2', 'nota 3'],
@@ -26,15 +24,12 @@
           ['7',  8,      8,   1],
           ['10',  3,     9,   7 ]
         ]);
-
         var options = {
           title: 'Evolução das Notas',
           curveType: 'function',
           legend: { position: 'bottom' }
         };
-
         var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
-
         chart.draw(data, options);
       }
     </script>
@@ -103,10 +98,6 @@
 </head>
 <body>
     {% if request.user.is_staff %}
-            {{total_n1.nota1__sum}}
-            {{total_n2.nota2__sum}}
-            {{total_n3.nota3__sum}}
-
             <!--Div that will hold the pie chart-->
             <div id="curve_chart" style="width: 900px; height: 500px"></div>
     {% else %}
